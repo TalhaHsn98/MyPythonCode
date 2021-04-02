@@ -40,9 +40,11 @@ def Get_input_From_Player():
 def Comparing_Input_and_secrectkey():
   Secretkey = GetsecretKey()
   inputfromplayer = Get_input_From_Player()
-  for i in range(6):
+  n = 0
+  while n <= 5:
      if Secretkey == inputfromplayer:
           print("YOU WON!!!!!")
+          break
      for i in range(len(inputfromplayer)):
         if inputfromplayer[i] == Secretkey[i]:
           print('Fermi')
@@ -51,10 +53,24 @@ def Comparing_Input_and_secrectkey():
         elif inputfromplayer[i] != Secretkey[i]:
           print('Bagel')  
      inputfromplayer = Get_input_From_Player()
+     n += 1
   if Secretkey != inputfromplayer:
       print('Sorry you lost the game')
       print('The Secret Key is:')
       print(Secretkey)
 
+
+
+def Playagain():
+  print("Do you want to play again")
+  print('Enter y or n')
+  play = str(input())
+  if play == 'y':
+    provideIntro()
+    Comparing_Input_and_secrectkey()
+  else:
+    print('Bye bye Tc')
+
 provideIntro()   
 Comparing_Input_and_secrectkey()
+Playagain()
