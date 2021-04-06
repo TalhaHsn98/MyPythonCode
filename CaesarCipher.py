@@ -40,8 +40,8 @@ def encryption(lines):
     print(charlist)
     
     
-print('Enter the line you eant to encrypt EXCEPT CHARS XYZ)
-line = str(input())
+print('Enter the line you want to encrypt EXCEPT CHARS XYZ')
+line = str(input()).upper()
 print(line)
 print('The encrypted line will be:')
 encryption(line)
